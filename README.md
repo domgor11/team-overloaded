@@ -1,6 +1,8 @@
 # TEAM OVERLOADED
 
-## Wearable Data Processing for Athlete Performance Analysis - Project Overview
+## Wearable Data Processing for Athlete Performance Analysis 
+
+## Project Overview
 
 This repository contains code for processing wearable device data from athletes to enable clustering and analysis of athlete states for health and performance optimization. The script handles data cleaning, preprocessing, and imputation of missing values to prepare the data for advanced analysis.
 
@@ -15,14 +17,20 @@ The processed data will be used to identify distinct athlete states (such as Ove
 
 ## Hackathon Participation
 
-This project was developed as part of the HealthTech AI Hub Hackathon.
+This project was developed as part of the HealthTech AI Hub Hackathon:
+[HealthTech AI Hub Hackathon 2024](https://www.linkedin.com/posts/healthtech-ai-hub_ai-uobhealthtechaihub-aihackathon-activity-7309941056320507904-U8QH?utm_source=share&utm_medium=member_desktop&rcm=ACoAACxJjQYBGdIzOwy05JLYrmDssykd68M9gYQ)
 
 The challenge focused on using AI techniques to analyze wearable data from athletes and identify patterns that could optimize health and performance.
 
+## Repository Structure
+The repository contains:
+
+1. **wearable_data_processing.py**: Handles data cleaning, preprocessing, and imputation of missing values
+2. **clustering.py**: Performs clustering analysis on the processed data to identify athlete states
 
 ## Features
 
-The data processing script provides the following key features:
+### Data Processing
 
 - **Data Cleaning and Preprocessing**: Handles missing data and sparse features in the dataset
 - **Emotion Processing**: Categorizes emotions into high/low positive/negative groups
@@ -33,9 +41,17 @@ The data processing script provides the following key features:
   - Missing Steps values imputed using regression and distribution-based methods
   - Missing emotional data imputed using exponential weighted moving average
 
+### Clustering Analysis
+
+- **K-Means Clustering**: Identifies distinct athlete states from processed data
+- **Optimal Cluster Selection**: Uses the elbow method to determine the optimal number of clusters
+- **PCA Visualization**: Projects high-dimensional data into 2D space for visualization
+- **Feature Importance Analysis**: Identifies which features contribute most to cluster differentiation
+- **Cluster Interpretation**: Labels clusters with meaningful names (Overloaded, Effective, Underloaded, etc.)
+
 ## Requirements
 
-- Python 3.7+
+- Python 3.8+
 - pandas
 - numpy
 - matplotlib
@@ -57,8 +73,10 @@ pip install pandas numpy matplotlib seaborn scikit-learn
 
 ## Usage
 
+### Data Processing
+
 1. Place the raw data file (`wearable_users_raw_data.csv`) in the project directory.
-2. Run the main script:
+2. Run the data processing script:
 
 ```bash
 python wearable_data_processing.py
@@ -70,6 +88,20 @@ python wearable_data_processing.py
    - `training_imputed.csv`: Training data with imputed values
    - `test_imputed.csv`: Test data with imputed values
    - Visualization figures saved in the `./output` directory
+
+### Clustering Analysis
+
+After processing the data, run the clustering script:
+
+```bash
+python clustering.py
+```
+
+This will:
+1. Load the processed training data
+2. Apply K-means clustering to identify athlete states
+3. Generate visualizations of the clusters and feature importance
+4. Label the clusters based on the characteristics of each group
 
 ## Data Processing Steps
 
@@ -99,13 +131,33 @@ python wearable_data_processing.py
    - Exponential weighted moving average to capture trends
    - Forward-fill method for remaining gaps
 
+## Clustering Methodology
+
+1. **Data Scaling**:
+   - Features scaled per individual to capture relative changes
+   - Demographic features (age, gender) scaled globally
+
+2. **K-Means Clustering**:
+   - Applied to scaled data to identify distinct athlete states
+   - Optimal number of clusters determined using the elbow method
+
+3. **Cluster Interpretation**:
+   - Clusters labeled based on emotional and performance characteristics:
+     - Overloaded: High negative emotions, lower performance
+     - Effective: Higher positive emotions, better performance
+     - Underloaded: Lower emotional activation, moderate performance
+     - Need More User Input: Sparse data patterns
+
+4. **Dimensionality Reduction**:
+   - PCA applied to visualize clusters in 2D space
+
 ## Completed Subtasks
 
-This script addresses the core sub-challenges of the Athlete State Clustering project:
+This project addresses the core sub-challenges of the Athlete State Clustering project:
 
 1. **Data Exploration and Preprocessing**: The script provides comprehensive cleaning and handling of missing values across all critical features.
 
-2. **Preparation for Clustering**: The output datasets maintain temporal information and user identifiers while ensuring complete data for effective clustering.
+2. **Clustering and Cluster Evaluation**: Applied K-means clustering to identify optimal number of clusters, evaluated using the elbow method, and interpreted clusters with feature importance analysis.
 
 3. **Preparation for Label Assignment**: The clean datasets can be used to develop supervised models for assigning labels to new users.
 
@@ -120,19 +172,25 @@ This script addresses the core sub-challenges of the Athlete State Clustering pr
 
 ## Visualizations
 
-The script generates several visualizations in the `./output` directory:
+The project generates several visualizations in the `./output` directory:
 
+### Data Processing Visualizations
 - Missing values heatmaps
 - Steps distribution before and after imputation
 - Example of nutrition data imputation for a sample user
 - Correlation matrices
 
-These visualizations help validate the quality of the imputation methods.
+### Clustering Visualizations
+- Elbow curve for optimal cluster selection
+- PCA projection of clusters
+- Emotion features by cluster
+- Performance scores by cluster
+- Feature importance in clustering
 
 ## Contributors
 
-- Amy Duguid
-- Dominika Gorgosz
-- Eve Day
-- Jingying Liang
-- Scott Brooks
+- Amy Duguid - acd446@student.bham.ac.uk
+- Dominika Gorgosz - dag449@student.bham.ac.uk
+- Eve Day - exd120@student.bham.ac.uk
+- Jingying Liang - jxl1880@student.bham.ac.uk
+- Scott Brooks - S.Brooks.2@warwick.ac.uk
