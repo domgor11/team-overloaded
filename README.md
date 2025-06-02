@@ -18,7 +18,7 @@ The processed data will be used to identify distinct athlete states (such as Ove
 ## Hackathon Participation
 
 This project was developed as part of the HealthTech AI Hub Hackathon:
-[HealthTech AI Hub Hackathon 2024](https://www.linkedin.com/posts/healthtech-ai-hub_ai-uobhealthtechaihub-aihackathon-activity-7309941056320507904-U8QH?utm_source=share&utm_medium=member_desktop&rcm=ACoAACxJjQYBGdIzOwy05JLYrmDssykd68M9gYQ)
+[HealthTech AI Hub Hackathon 2025](https://www.linkedin.com/posts/healthtech-ai-hub_ai-uobhealthtechaihub-aihackathon-activity-7309941056320507904-U8QH?utm_source=share&utm_medium=member_desktop&rcm=ACoAACxJjQYBGdIzOwy05JLYrmDssykd68M9gYQ)
 
 The challenge focused on using AI techniques to analyze wearable data from athletes and identify patterns that could optimize health and performance.
 
