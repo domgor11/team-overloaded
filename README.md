@@ -75,7 +75,7 @@ pip install pandas numpy matplotlib seaborn scikit-learn
 
 ### Data Processing
 
-1. Place the raw data file (`wearable_users_raw_data.csv`) in the project directory.
+1. Place the raw data file (`wearable_users_raw_data.csv`) in the project directory
 2. Run the data processing script:
 
 ```bash
